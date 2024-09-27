@@ -98,6 +98,7 @@ export async function getLoggedInUser() {
   }
 
   export const createLinkToken = async (user: User) => {
+
     try {
         const tokenParams = {
             user: {
@@ -108,6 +109,7 @@ export async function getLoggedInUser() {
             language: 'en',
             country_codes: ['US'] as CountryCode[]
         }
+        
 
         const response = await plaidClient.linkTokenCreate(tokenParams)
 

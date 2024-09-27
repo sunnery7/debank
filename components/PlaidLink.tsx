@@ -1,4 +1,4 @@
-import { PlaidLinkOptions, usePlaidLink } from "react-plaid-link";
+import { PlaidLinkOnSuccess, PlaidLinkOptions, usePlaidLink } from "react-plaid-link";
 import { Button } from "./ui/button";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -18,7 +18,7 @@ export default function PlaidLinnk({ user, variant }: PlaidLinkProps){
         getLinkToken();
     }, [user])
     
-    const onSuccess = useCallback(async (public_token: string) => {
+    const onSuccess = useCallback<PlaidLinkOnSuccess>(async (public_token: string) => {
         await exchangePublicToken({ publicToken: public_token, user })
 
         router.push('/')
