@@ -28,11 +28,11 @@ export default async function Home(){
                 RECENT TRANSACTION
             </div>
 
-            <RightSideBar 
+            {/* <RightSideBar 
                 user={loggedIn}
                 transactions={[]}
-                banks={[{currentBalance: 1250.50}, {currentBalance: 500.00}]}
-            />
+                banks={[{currentBalance: 1250}, {currentBalance: 500}]}
+            /> */}
         </section>
     )
 }
